@@ -1,0 +1,26 @@
+nodes:
+  - address: 35.210.56.251
+    internal_address: 10.132.0.7
+    user: rancher
+    role: [controlplane, worker, etcd]
+  - address: 35.210.201.147
+    internal_address: 10.132.0.8
+    user: rancher
+    role: [controlplane, worker, etcd]
+  - address: 35.210.206.98
+    internal_address: 10.132.0.6
+    user: rancher
+    role: [controlplane, worker, etcd]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
