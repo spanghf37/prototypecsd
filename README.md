@@ -33,7 +33,13 @@ rke --version
 
 3) Sur chaque VM RancherOS, lancer ssh-keyghen. Puis remplacer les fichiers générés id_rsa et id_rsa.pub par ceux générés par PuttyGen
 
-4) Préparer fichier rancher-cluster.yml et lancer rke up --config ./rancher-cluster.yml
+4) Installation de RANCHER sur un cluster type single :
+Préparer fichier rancher-cluster.yml et lancer rke up --config ./rancher-cluster-single.yml
+
+5) Installation du Master Kubernetes et des Workers Kubernetes
+Sur d'autres VM avec socle RancherOS, lancer les commandes Docker générées lors de l'ajout d'un nouveau cluster dans l'interface Rancher. Attention à préciser les IP internes et externes.
+
+
 
 
     
