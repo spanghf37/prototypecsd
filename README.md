@@ -35,8 +35,31 @@ rke --version
 
 4) Installation de RANCHER sur un cluster type single :
 Préparer fichier rancher-cluster.yml et lancer rke up --config ./rancher-cluster-single.yml
+Ce va déployer un cluster Kubernetes.
 
-5) Installation du Master Kubernetes et des Workers Kubernetes
+Ensuite, installer Helm 3. Puis déployer le catalog Rancher sur le cluster Kubernetes.
+Tester Helm avec "helm help"
+Puis : helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+
+kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.15.0/cert-manager.crds.yaml
+
+kubectl create namespace cert-manager
+helm repo add jetstack https://charts.jetstack.io
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --version v0.15.0
+
+kubectl get pods --namespace cert-manager
+
+helm install rancher rancher-latest/rancher \
+  --namespace cattle-system \
+  --set hostname=rancheros-rancher-1.duckdns.org
+
+kubectl -n cattle-system rollout status deploy/rancher
+
+
+6) Installation du Master Kubernetes et des Workers Kubernetes
 Sur d'autres VM avec socle RancherOS, lancer les commandes Docker générées lors de l'ajout d'un nouveau cluster dans l'interface Rancher. Attention à préciser les IP internes et externes.
 
 
