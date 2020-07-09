@@ -1,6 +1,6 @@
 nodes:
   - address: 35.210.178.211
-    internal_address: 10.132.0.17
+    internal_address: 10.132.0.12
     user: rancher
     role: [controlplane, worker, etcd]
 
