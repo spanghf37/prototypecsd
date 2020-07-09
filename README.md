@@ -11,7 +11,7 @@
         extra_args: [--mtu, 1460]
         
     Dans Sécurité de la VM / SSH copier clé SSH pour l'utilisateur  "rancher" :
-    ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAr7uY8Y5PiGwXva8RxSqOkjyDtY3BRXmt3WM2K7cDd2bmJ6+1I2pKh8j5k1ilRThbnCqC9vI9mvv9F1EdU3kQOPIqnrz/jdPlHy8Efy8wQB+Y4u2lNT5bmkeC2A1ZdraKkQ5uyIuyFWPHHlE/cbEnRIE7SHuXeQLwojTx7df3p1LYppbV8LHolmUYQ5bxiv6FmbBFDJ1JHPRQvSU8ht4UuUnL8nMuDnLl1LqxU3YEKlRMMXl2F8QhIoCh4dcd4MvVGgFSRPbYmnYybbaf/HXdcB2Tb71awpf8NkzNzTzyQ4uymfUb3f0Nr7HBRgN5k+7sh79g62y6j9XKP5eW3D77EQ== rancher
+    ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAih71xgU1jVr0W18W6ve09FMOXjSrfUH55/Fw7be+6bQGdGb7HERAHx66fymfjmgN5XxTwbD6SpU0+eFwOQNTKfgmNk9c+mosgBySKYFhRs+EBtLie2iySYAoRqxGTlTwsmmtsUULHtax67BIjEb+DwwySJiv/kFf1x3/O3heAXiBjj48meEreCroxC9HQs8X6msx7hntYpJgYkebxpZ+R0x61KnZhYaZ228v+FJuTlCUyT5YCV4xoCjlgf+vlYdKxyl86cZtwaySl9WkGDZxGInc6HhW3cLL3xddmnEM2YSV46TFsmoSss8De7HUMY9oltWmMNqt9joETNhT0xDLOw== rancher
     
     
     Dans change VM RancherOS: sudo ros config set rancher.network.interfaces.eth1.mtu 1460
